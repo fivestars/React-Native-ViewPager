@@ -8,7 +8,7 @@ declare module 'rn-viewpager' {
       keyboardDismissMode?: 'none' | 'on-drag';
       onPageScroll?(e: ViewPagerAndroidOnPageScrollEventData): void;
       onPageScrollStateChanged?(state: 'idle' | 'settling' | 'dragging'): void;
-      onPageSelected?(e: ViewPagerAndroidOnPageScrollEventData): void;
+      onPageSelected?(e: ViewPagerAndroidOnPageSelectedEventData): void;
       scrollEnabled?: boolean;
     }
 
@@ -17,7 +17,7 @@ declare module 'rn-viewpager' {
       setPageWithoutAnimation(selectedPage: number): void;
     }
 
-    interface IndicatorViewPagerProps extends ViewProperties {
+    interface IndicatorViewPagerProps extends ViewPagerProps {
       indicator: React.ReactNode;
       pagerStyle?: ViewProperties['style'];
       autoPlayEnable?: boolean;
